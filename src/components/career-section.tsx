@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import EducationSection from "./EducationSection";
 import popgif from "../assets/images/career/popgif.gif";
 import vaigif from "../assets/images/career/vaimarket.gif";
-import monkzgif from "../assets/images/career/monkzgif.gif";
+import monkzgif from "../assets/images/career/monkz.gif";
 import talysisgif from "../assets/images/career/talysis.gif";
 import hmee from "../assets/images/career/hmee.webp";
 
