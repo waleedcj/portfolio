@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import vrf from "../assets/images/projects/vrf.png"
-import flappy from "../assets/images/projects/flapysol.png"
-import mishmish from "../assets/images/projects/mishmish.png"
-import chatterbox from "../assets/images/projects/chatterbox.png"
-import justparts from "../assets/images/projects/justpart.png"
+import vrf from "../assets/images/projects/vrf.webp"
+import flappy from "../assets/images/projects/flapysol.webp"
+import mishmish from "../assets/images/projects/mishmish.webp"
+import chatterbox from "../assets/images/projects/chatterbox.webp"
+import justparts from "../assets/images/projects/justpart.webp"
 import oldport from "../assets/images/projects/oldport.webp"
 
 interface Project {
