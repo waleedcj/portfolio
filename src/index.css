@@ -69,7 +69,7 @@
   --primary-duo: #eab308;
   --text-duo: #000000;
 }
-
+ 
 @layer base {
   body {
     @apply antialiased bg-background text-foreground;
