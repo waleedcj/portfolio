@@ -5,6 +5,7 @@ import mishmish from "../assets/images/projects/mishmish.webp"
 import chatterbox from "../assets/images/projects/chatterbox.webp"
 import justparts from "../assets/images/projects/justpart.webp"
 import oldport from "../assets/images/projects/oldport.webp"
+import { logExternalLink } from '../utils/analytics'
 
 interface Project {
   title: string
@@ -72,6 +73,7 @@ function ProjectCard({ project }: { project: Project }) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => logExternalLink(project.title)}
           className="inline-block bg-primaryduo text-textduo px-4 py-2 rounded-md text-sm font-medium active:bg-primaryduo/50 hover:bg-primaryduo/50 transition-colors"
         >
           View Project

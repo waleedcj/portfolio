@@ -3,6 +3,7 @@ import { FiFileText } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { LuMapPin } from "react-icons/lu";
+import { logExternalLink } from "../utils/analytics";
 
 export default function HeroSection() {
   return (
@@ -29,6 +30,7 @@ export default function HeroSection() {
             href="https://cdn.jsdelivr.net/gh/waleedcj/walid-assets/walidmresume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logExternalLink("Resume")}
             className="px-4 py-2 bg-secondary text-secondary-foreground rounded-md transition transform hover:-translate-y-1 hover:text-foreground hover:bg-secondary/80 flex items-center space-x-2"
           >
             <FiFileText size={16} />
@@ -37,7 +39,9 @@ export default function HeroSection() {
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/waleed-memon-886579181/"
-             target="_blank"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("LinkedIn")}
             className="p-2 bg-secondary text-secondary-foreground rounded-md transition transform hover:-translate-y-1 hover:text-foreground hover:bg-secondary/80"
           >
             <FaLinkedinIn size={20} />
@@ -45,7 +49,9 @@ export default function HeroSection() {
           {/* GitHub */}
           <a
             href="https://github.com/waleedcj"
-             target="_blank"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("GitHub")}
             className="p-2 bg-secondary text-secondary-foreground rounded-md transition transform hover:-translate-y-1 hover:text-foreground hover:bg-secondary/80"
           >
             <FaGithub size={20} />
@@ -53,7 +59,9 @@ export default function HeroSection() {
           {/* Email */}
           <a
             href="mailto:waleedcj16@gmail.com"
-             target="_blank"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("mailto")}
             className="p-2 bg-secondary text-secondary-foreground rounded-md transition transform hover:-translate-y-1 hover:text-foreground hover:bg-secondary/80"
           >
             <TfiEmail size={20} />
@@ -61,12 +69,13 @@ export default function HeroSection() {
           {/* WhatsApp */}
           <a
             href="https://wa.me/971566936246"
-             target="_blank"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("Whatsapp")}
             className="p-2 bg-secondary text-secondary-foreground rounded-md transition transform hover:-translate-y-1 hover:text-foreground hover:bg-secondary/80"
           >
             <FaWhatsapp size={20} />
           </a>
-
         </div>
         {/* <motion.button
           whileHover={{ scale: 1.05 }}
