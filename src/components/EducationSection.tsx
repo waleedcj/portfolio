@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import murdoch from '../assets/images/murdoch.webp';
 import oxford from '../assets/images/oxford.webp';
 
