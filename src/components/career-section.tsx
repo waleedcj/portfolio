@@ -5,15 +5,35 @@ import talysisLogo from "../assets/images/talysis_logo.webp";
 import mkzLogo from "../assets/images/mkz.webp";
 import hmeLogo from "../assets/images/hme.webp";
 import { TbRefresh } from "react-icons/tb";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import EducationSection from "./EducationSection";
 import popgif from "../assets/images/career/popgif.gif";
 import vaigif from "../assets/images/career/vaimarket.gif";
 import monkzgif from "../assets/images/career/monkz.gif";
 import talysisgif from "../assets/images/career/talysis.gif";
+import vizlogo from "../assets/images/logo-filled-one.png";
+import nativemotiom from "../assets/images/nativemotion.png";
+import nativemotiomgif from "../assets/images/career/nativemotion.gif";
+import viztravelgif from "../assets/images/career/viztravel.gif";
 import hmee from "../assets/images/career/hmee.webp";
 
 const experiences = [
+   {
+    company: "Native Motion",
+    role: "Founder",
+    period: "Jun 2025 - Present",
+    logo: nativemotiom,
+    image: nativemotiomgif,
+    website: "https://www.nativemotion.dev/",
+  }, 
+  {
+    company: "VizualTravel",
+    role: "Web & Mobile Developer",
+    period: "Apr 2025 - Present",
+    logo: vizlogo,
+    image: viztravelgif,
+    website: "https://www.vizualtravel.com/",
+  },
   {
     company: "Vai Management",
     role: "Software Engineer",
@@ -99,42 +119,27 @@ export default function WorkExperience() {
   const [selectedMobileImage, setSelectedMobileImage] = useState<number | null>(
     null
   );
-  const [showHint, setShowHint] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowHint(false);
-    }, 4500); // Hide after 4 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="flex justify-center items-center gap-4 mb-16">
-          <motion.div
+          <div
             onClick={() => setActiveTab("career")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             className={`text-3xl font-bold text-center cursor-pointer transition 
               ${activeTab === "career" ? "text-foreground" : "text-gray-400"} 
               hover:-translate-y-1 hover:text-foreground`}
           >
             Career
-          </motion.div>
+          </div>
 
           <TbRefresh
             className={`transition-all duration-300 
             ${activeTab === "education" ? "rotate-180" : "rotate-90"}`}
             size={20}
           />
-          <motion.div
+          <div
             onClick={() => setActiveTab("education")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             className={`text-3xl font-bold text-center cursor-pointer transition 
               ${
                 activeTab === "education" ? "text-foreground" : "text-gray-400"
@@ -142,37 +147,30 @@ export default function WorkExperience() {
               hover:-translate-y-1 hover:text-foreground`}
           >
             Education
-          </motion.div>
+          </div>
         </div>
         <AnimatePresence mode="wait">
           {activeTab === "career" ? (
             <div key="career" className="relative flex flex-col md:flex-row">
               <div className="md:w-1/2">
-              {showHint && (
-              <AnimatePresence>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute text-center text-sm text-muted-foreground mb-8 -top-8"
+             
+              <div
+                
               >
                  {window.innerWidth >= 768 ? (
                   "✨ Hover over experiences to see previews"
                  ) : (
                   "✨ Tap on experiences to see project previews"
                  )}
-                </motion.div>
-              </AnimatePresence>
-              )}
+                </div>
+                 
+            
                 <div className="relative">
                   <div className="absolute left-8 top-0 bottom-10 w-px bg-primaryduo"></div>
                   <div className="space-y-12">
                     {experiences.map((exp, index) => (
-                      <motion.div
+                      <div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.2 }}
                         className="flex gap-8"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
@@ -206,7 +204,7 @@ export default function WorkExperience() {
                             {exp.period}
                           </p>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
