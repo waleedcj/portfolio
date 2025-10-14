@@ -4,6 +4,7 @@ import flappy from "../assets/images/projects/flapysol.webp"
 import mishmish from "../assets/images/projects/mishmish.webp"
 import chatterbox from "../assets/images/projects/chatterbox.webp"
 import justparts from "../assets/images/projects/justpart.webp"
+import minedash from "../assets/images/projects/minedash.webp"
 import oldport from "../assets/images/projects/oldport.webp"
 import { logExternalLink } from '../utils/analytics'
 
@@ -18,7 +19,7 @@ const projects: Project[] = [
    {
     title: "Mine Dash",
     description: "Mining pool dashboard in solidjs",
-    image: justparts,
+    image: minedash,
     link: "https://waleedcj.github.io/MineDash/"
   },
   {
