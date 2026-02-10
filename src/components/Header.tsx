@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import ThemeToggle from './ToggleTheme';
 
+
 export function Header() {
   return (
     <motion.header
