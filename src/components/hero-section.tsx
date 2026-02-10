@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="flex justify-center space-x-4">
           {/* Resume */}
           <a
-            href="https://cdn.jsdelivr.net/gh/waleedcj/walid-assets/walidmresume.pdf"
+            href="https://cdn.jsdelivr.net/gh/waleedcj/walid-assets@main/walidmemon_re%CC%81sume%CC%81.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => logExternalLink("Resume")}

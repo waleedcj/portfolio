@@ -20,7 +20,7 @@ import hmee from "../assets/images/career/hmee.webp";
 const experiences = [
    {
     company: "Native Motion",
-    role: "Founder",
+    role: "Founder (Next.js, React Native, Animations)",
     period: "Jun 2025 - Present",
     logo: nativemotiom,
     image: nativemotiomgif,
@@ -28,7 +28,7 @@ const experiences = [
   }, 
   {
     company: "VizualTravel",
-    role: "Web & Mobile Developer",
+    role: "Web & Mobile Developer (React, React Native, AWS, Node.js, PostgreSQL)",
     period: "Apr 2025 - Present",
     logo: vizlogo,
     image: viztravelgif,
@@ -36,7 +36,7 @@ const experiences = [
   },
   {
     company: "Vai Management",
-    role: "Software Engineer",
+    role: "Frontend & Blockchain Developer",
     period: "Jan 2024 - Dec 2024",
     logo: vaiLogo,
     image: vaigif,
@@ -44,7 +44,7 @@ const experiences = [
   },
   {
     company: "Pop Social",
-    role: "Software Engineer",
+    role: "Frontend & Blockchain Developer (react native, AWS, Solidity, Java)",
     period: "Dec 2022 - Jun 2024",
     logo: popLogo,
     image: popgif,
@@ -52,7 +52,7 @@ const experiences = [
   },
   {
     company: "Talysis Education",
-    role: "Product Developer",
+    role: "Product Developer (Django, React, AWS)",
     period: "Jun 2022 - May 2023",
     logo: talysisLogo,
     image: talysisgif,
@@ -60,7 +60,7 @@ const experiences = [
   },
   {
     company: "Cryptomonkz",
-    role: "Software Engineer",
+    role: "Software Engineer (Full Stack, React, Node.js)",
     period: "Oct 2022 - Feb 2023",
     logo: mkzLogo,
     image: monkzgif,

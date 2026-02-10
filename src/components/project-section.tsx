@@ -27,6 +27,8 @@ const tokenizedPlatformThumbnail = "https://cdn.jsdelivr.net/gh/waleedcj/walid-a
 const tokenizedPart1Url = "https://cdn.jsdelivr.net/gh/waleedcj/walid-assets@main/part1.mp4"
 // Inferred from your naming because the third URL provided repeated part1.mp4.
 const tokenizedPart2Url = "https://cdn.jsdelivr.net/gh/waleedcj/walid-assets@main/part2.mp4"
+const designPortfolioPdfUrl = "https://raw.githubusercontent.com/waleedcj/walid-assets/main/walidDesignPortfolio.pdf"
+const designPortfolioThumbnailUrl = "https://cdn.jsdelivr.net/gh/waleedcj/walid-assets@main/designThumb.webp"
 
 const tokenizedPlatformDemos: VideoDemo[] = [
   {
@@ -187,6 +189,91 @@ function VideoDemoCard({ demo, index }: { demo: VideoDemo, index: number }) {
   )
 }
 
+function DesignPortfolioCard() {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [showPdfPreview, setShowPdfPreview] = useState(false)
+
+  return (
+    <motion.article
+      ref={cardRef}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="rounded-2xl overflow-hidden border border-border/80 bg-card shadow-xl mb-20"
+    >
+      <div className="relative bg-black/90 aspect-[4/3]">
+        {!showPdfPreview ? (
+          <>
+            <img
+              src={designPortfolioThumbnailUrl}
+              alt="Design portfolio thumbnail preview"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center px-4">
+              <button
+                type="button"
+                onClick={() => setShowPdfPreview(true)}
+                className="inline-flex bg-primaryduo text-textduo px-4 py-2 rounded-md text-sm font-medium active:bg-primaryduo/50 hover:bg-primaryduo/50 transition-colors"
+              >
+                Preview PDF
+              </button>
+            </div>
+          </>
+        ) : (
+          <object
+            data={designPortfolioPdfUrl}
+            type="application/pdf"
+            className="w-full h-full"
+            aria-label="Walid Design Portfolio PDF Preview"
+          >
+            <div className="w-full h-full flex items-center justify-center px-4">
+              <a
+                href={designPortfolioPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => logExternalLink("Design Portfolio PDF Fallback")}
+                className="inline-flex bg-primaryduo text-textduo px-4 py-2 rounded-md text-sm font-medium active:bg-primaryduo/50 hover:bg-primaryduo/50 transition-colors"
+              >
+                Open Portfolio PDF
+              </a>
+            </div>
+          </object>
+        )}
+      </div>
+      <div className="p-5">
+        <h3 className="text-xl font-semibold leading-tight">Design Portfolio (PDF)</h3>
+        <p className="mt-2 text-sm text-mutedForeground">
+          Case studies, interface explorations, and visual design work collected in one portfolio deck.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <a
+            href={designPortfolioPdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("Design Portfolio PDF")}
+            className="inline-flex bg-primaryduo text-textduo px-4 py-2 rounded-md text-sm font-medium active:bg-primaryduo/50 hover:bg-primaryduo/50 transition-colors"
+          >
+            Open Portfolio
+          </a>
+          <a
+            href={designPortfolioPdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => logExternalLink("Design Portfolio Download")}
+            className="inline-flex border border-border px-4 py-2 rounded-md text-sm font-medium hover:bg-muted/60 transition-colors"
+          >
+            Download PDF
+          </a>
+        </div>
+      </div>
+    </motion.article>
+  )
+}
+
 function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
@@ -246,6 +333,26 @@ export default function ProjectSection() {
             <VideoDemoCard key={demo.title} demo={demo} index={index} />
           ))}
         </div>
+
+        {/* <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-center mb-6"
+        >
+          Design Portfolio
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          viewport={{ once: true }}
+          className="text-sm sm:text-base text-mutedForeground text-center max-w-3xl mx-auto mb-10"
+        >
+          A curated PDF portfolio featuring UI design work, product thinking, and visual explorations.
+        </motion.p>
+        <DesignPortfolioCard /> */}
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
